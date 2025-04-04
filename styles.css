@@ -1,0 +1,155 @@
+/* Base styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-geist-mono {
+    font-family: 'Geist Mono', monospace;
+}
+
+/* Map styling */
+.map-container {
+    position: relative;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+#world-map {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    background-color: #f0f8ff; /* 浅蓝色背景 */
+}
+
+.country {
+    fill: #e8e8e8; /* 更浅的灰色为默认 */
+    stroke: #ffffff;
+    stroke-width: 0.5;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    vector-effect: non-scaling-stroke; /* 确保缩放时描边宽度保持不变 */
+}
+
+.country:hover {
+    stroke-width: 1.5;
+    stroke: #555;
+    filter: brightness(1.1);
+}
+
+/* Tariff color scale - 使用更清新的调色板 */
+.tariff-10 {
+    fill: #c7e9b4; /* 浅绿色 */
+}
+
+.tariff-20-29 {
+    fill: #7fcdbb; /* 青绿色 */
+}
+
+.tariff-30-39 {
+    fill: #41b6c4; /* 蓝绿色 */
+}
+
+.tariff-40-49 {
+    fill: #2c7fb8; /* 中蓝色 */
+}
+
+.tariff-50-plus {
+    fill: #253494; /* 深蓝色 */
+}
+
+/* Tooltip styling */
+#tooltip {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+    max-width: 320px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    opacity: 0.98;
+    transform-origin: top left;
+}
+
+#tooltip.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#tooltip.hide {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.tooltip-header {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+/* 公司列表样式 */
+#tooltip ul {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+#tooltip li {
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+/* Zoom control */
+#zoom-reset {
+    transition: all 0.2s ease;
+}
+
+#zoom-reset:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .map-container {
+        overflow-x: auto;
+    }
+    
+    #world-map {
+        min-width: 700px;
+    }
+}
+
+/* Company cards hover effect */
+.border {
+    transition: all 0.2s ease;
+}
+
+.border:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Legend styling */
+.legend {
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    margin-top: 16px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 4px;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 8px;
+    border-radius: 4px;
+}
