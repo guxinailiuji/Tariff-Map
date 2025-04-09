@@ -2,8 +2,8 @@ const tariffData = {
     "chn": {  // 使用ISO 3166-1 alpha-3国家代码
         "name": "中国",
         "englishName": "China",
-        "tariffRate": 54,
-        "effectiveDate": "2025年4月9日",
+        "tariffRate": 104,
+        "effectiveDate": "2024年5月14日",
         "affectedCompanies": [
             {
                 "name": "苹果",
